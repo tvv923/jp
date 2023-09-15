@@ -4,6 +4,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         FileNavigator navigator = new FileNavigator();
+
         navigator.addPath("/path/to/files");
         navigator.addPath("/path/to/files");
         navigator.addPath("/another/path");

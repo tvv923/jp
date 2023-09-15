@@ -1,9 +1,9 @@
 package edu.hillel.lesson13;
 
 public class FileData {
-    private String name;
-    private long size;
-    private String path;
+    private final String name;
+    private final long size;
+    private final String path;
 
     public FileData(String name, long size, String path) {
         this.name = name;

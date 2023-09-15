@@ -3,9 +3,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Comparator;
 
 public class FileNavigator {
-    private Map<String, List<FileData>> filesMap;
+    private final Map<String, List<FileData>> filesMap;
 
     public FileNavigator() {
         filesMap = new HashMap<>();
@@ -51,7 +52,7 @@ public class FileNavigator {
         for (List<FileData> files : filesMap.values()) {
             result.addAll(files);
         }
-        result.sort((f1, f2) -> Long.compare(f1.getSize(), f2.getSize()));
+        result.sort(Comparator.comparingLong(FileData::getSize));
         return result;
     }
 }
