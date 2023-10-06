@@ -21,11 +21,17 @@ public class PetrolStation {
 
             fuelInventory.compute(fuelType, (key, value) -> {
                 int currentAmount = value;
-                int remainingAmount = Math.max(currentAmount - requiredAmount, 0);
-                System.out.println(car.getModel() + " received " +
-                        (currentAmount - remainingAmount) +
-                        " liters of " + fuelType + ".");
-                return remainingAmount;
+                int remainingAmount = currentAmount - requiredAmount;
+                if (remainingAmount < 0) {
+                    String errorMessage = car.getModel() + " requested " + requiredAmount +
+                            " liters of " + fuelType + ", but only " + currentAmount +
+                            " liters are available. Unable to process the request.";
+                    throw new IllegalArgumentException(errorMessage);
+                } else {
+                    System.out.println(car.getModel() + " received " + requiredAmount +
+                            " liters of " + fuelType + ".");
+                    return remainingAmount;
+                }
             });
             System.out.println("Remaining fuel inventory: " + fuelInventory);
 
