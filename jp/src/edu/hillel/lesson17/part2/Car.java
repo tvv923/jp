@@ -9,6 +9,7 @@ public class Car {
         this.model = model;
         this.fuelAmount = fuelAmount;
         this.fuelType = fuelType;
+
     }
 
     public String getModel() {

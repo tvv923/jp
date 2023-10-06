@@ -47,7 +47,9 @@ public class Main {
                 Runnable refuelTask = () -> {
                     try {
                         petrolStation.doRefuel(car);
-                    } catch (RuntimeException e) {
+                    } catch (IllegalArgumentException e) {
+                        System.out.println("Invalid fuel amount: " + e.getMessage());
+                    }catch (RuntimeException e) {
                         System.out.println("Execution error: " + e.getMessage());
                     }
                 };
