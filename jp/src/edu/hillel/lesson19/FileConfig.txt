@@ -1,0 +1,4 @@
+FILE=c:\JP\jp\
+LEVEL=DEBUG
+MAX-SIZE=1000
+FORMAT=myFormat
