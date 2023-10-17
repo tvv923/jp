@@ -9,7 +9,7 @@ CREATE TABLE Lesson
 (
     id          INT AUTO_INCREMENT PRIMARY KEY,
     name        VARCHAR(255),
-    updatedAt   TIMESTAMP,
+    updatedAt   DATETIME,
     homework_id INT,
     FOREIGN KEY (homework_id) REFERENCES Homework (id)
 );
@@ -18,7 +18,7 @@ CREATE TABLE Schedule
 (
     id        INT AUTO_INCREMENT PRIMARY KEY,
     name      VARCHAR(255),
-    updatedAt TIMESTAMP
+    updatedAt DATETIME
 );
 
 CREATE TABLE Schedule_Lesson
