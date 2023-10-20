@@ -65,11 +65,9 @@ public class LessonDao {
                 String homeworkName = resultSet.getString("homework_name");
                 String homeworkDescription = resultSet.getString("homework_description");
 
-                Homework homework = new Homework(homeworkName, homeworkDescription);
-                homework.setId(homeworkId);
+                Homework homework = new Homework(homeworkId, homeworkName, homeworkDescription);
 
-                Lesson lesson = new Lesson(lessonName, homework);
-                lesson.setId(lessonId);
+                Lesson lesson = new Lesson(lessonId, lessonName, homework);
 
                 lessons.add(lesson);
             }
@@ -89,8 +87,7 @@ public class LessonDao {
                     String homeworkName = resultSet.getString("homework_name");
                     String homeworkDescription = resultSet.getString("homework_description");
 
-                    Homework homework = new Homework(homeworkName, homeworkDescription);
-                    homework.setId(homeworkId);
+                    Homework homework = new Homework(homeworkId, homeworkName, homeworkDescription);
 
                     Lesson lesson = new Lesson(lessonName, homework);
                     return lesson;
