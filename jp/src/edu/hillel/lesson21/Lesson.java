@@ -10,6 +10,12 @@ public class Lesson {
         this.homework = homework;
     }
 
+    public Lesson(int id, String name, Homework homework) {
+        this.id = id;
+        this.name = name;
+        this.homework = homework;
+    }
+    
     public void setId(int id) {
         this.id = id;
     }
