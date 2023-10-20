@@ -9,16 +9,20 @@ public class DataBaseConnection {
     private static final String USER = "root";
     private static final String PASSWORD = "root";
 
+    private Connection connection;
+
     public Connection getConnection() {
         try {
-            return DriverManager.getConnection(URL, USER, PASSWORD);
+            connection = DriverManager.getConnection(URL, USER, PASSWORD);
+            return connection;
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
         }
     }
 
-    public void close(Connection connection) {
+    @Override
+    public void close() {
         try {
             if (connection != null) {
                 connection.close();
