@@ -2,27 +2,23 @@ package edu.hillel.lesson23;
 
 import edu.hillel.lesson23.Builder.Car;
 import edu.hillel.lesson23.Builder.CarBuilder;
+import edu.hillel.lesson23.Factory.ChairFactory;
 import edu.hillel.lesson23.Factory.Furniture;
 import edu.hillel.lesson23.Factory.FurnitureFactory;
-import edu.hillel.lesson23.Factory.FurnitureType;
+import edu.hillel.lesson23.Factory.TableFactory;
 import edu.hillel.lesson23.Strategy.RectangleAreaCalculation;
 import edu.hillel.lesson23.Strategy.Shape;
 import edu.hillel.lesson23.Strategy.TriangleAreaCalculation;
 
 public class Main {
     public static void main(String[] args) {
-        try {
-            FurnitureFactory factory = new FurnitureFactory();
-            Furniture chair = factory.createFurniture(FurnitureType.CHAIR);
-            Furniture table = factory.createFurniture(FurnitureType.TABLE);
-            Furniture sofa = factory.createFurniture(FurnitureType.SOFA);
+        FurnitureFactory chairFactory = new ChairFactory();
+        Furniture chair = chairFactory.createFurniture();
+        chair.assemble();
 
-            chair.assemble();
-            table.assemble();
-            sofa.assemble();
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
-        }
+        FurnitureFactory tableFactory = new TableFactory();
+        Furniture table = tableFactory.createFurniture();
+        table.assemble();
 
         Car car = new CarBuilder()
                 .setBody("Sedan")
