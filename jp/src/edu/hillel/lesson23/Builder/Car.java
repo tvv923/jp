@@ -5,11 +5,33 @@ public class Car {
     private String engine;
     private String wheels;
 
-    // Конструктор
-    public Car(String body, String engine, String wheels) {
-        this.body = body;
-        this.engine = engine;
-        this.wheels = wheels;
+    public static class CarBuilder {
+        private String body;
+        private String engine;
+        private String wheels;
+
+        public CarBuilder setBody(String body) {
+            this.body = body;
+            return this;
+        }
+
+        public CarBuilder setEngine(String engine) {
+            this.engine = engine;
+            return this;
+        }
+
+        public CarBuilder setWheels(String wheels) {
+            this.wheels = wheels;
+            return this;
+        }
+
+        public Car build() {
+            Car car = new Car();
+            car.body = this.body;
+            car.engine = this.engine;
+            car.wheels = this.wheels;
+            return car;
+        }
     }
 
     @Override
