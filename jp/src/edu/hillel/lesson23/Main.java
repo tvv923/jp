@@ -1,7 +1,6 @@
 package edu.hillel.lesson23;
 
 import edu.hillel.lesson23.Builder.Car;
-import edu.hillel.lesson23.Builder.CarBuilder;
 import edu.hillel.lesson23.Factory.ChairFactory;
 import edu.hillel.lesson23.Factory.Furniture;
 import edu.hillel.lesson23.Factory.FurnitureFactory;
@@ -19,8 +18,8 @@ public class Main {
         FurnitureFactory tableFactory = new TableFactory();
         Furniture table = tableFactory.createFurniture();
         table.assemble();
-
-        Car car = new CarBuilder()
+        
+        Car car = new Car.CarBuilder()
                 .setBody("Sedan")
                 .setEngine("V6")
                 .setWheels("Alloy")
