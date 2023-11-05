@@ -1,0 +1,3 @@
+fileContent
+1. First row of sample1.txt for test.
+2. Second row of sample1.txt for test.
