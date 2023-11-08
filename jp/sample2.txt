@@ -1,0 +1,3 @@
+fileContent
+3. Third row of sample2.txt for test.
+4. Fourth row of sample2.txt for test.
