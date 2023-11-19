@@ -48,4 +48,8 @@ public class OrderRepository {
     public Product getProductById(int productId) {
         return products.get(productId);
     }
+
+    public List<Product> getAllProducts() {
+        return new ArrayList<>(products.values());
+    }
 }
