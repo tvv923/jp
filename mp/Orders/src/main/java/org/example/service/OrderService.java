@@ -28,4 +28,8 @@ public class OrderService {
     public Product getProductById(int productId) {
         return orderRepository.getProductById(productId);
     }
+
+    public List<Product> getAllProducts() {
+        return orderRepository.getAllProducts();
+    }
 }
